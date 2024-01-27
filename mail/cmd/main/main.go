@@ -7,6 +7,7 @@ import (
 	"os"
 
 	mailConfig "github.com/floor2hq/alerts/internal"
+	models "github.com/floor2hq/alerts/internal/models"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 )
@@ -25,17 +26,8 @@ func main() {
 	http.ListenAndServe(":6969", r)
 }
 
-type MailingParams struct {
-	Subject     string   `json:"subject,omitempty"`
-	Content     string   `json:"content,omitempty"`
-	To          []string `json:"to,omitempty"`
-	Cc          []string `json:"cc,omitempty"`
-	Bcc         []string `json:"bcc,omitempty"`
-	AttachFiles []string `json:"attachFiles,omitempty"`
-}
-
 func MailRequestHandler(w http.ResponseWriter, r *http.Request) {
-	var paramInstance MailingParams
+	var paramInstance models.MailingParams
 
 	senderName := os.Getenv("EMAIL_SENDER_NAME")
 	senderAddress := os.Getenv("EMAIL_SENDER_ADDRESS")
