@@ -1,21 +1,19 @@
 {
-  "name": "sms",
+  "name": "twillio",
   "version": "1.0.0",
-  "description": "SMS Utility package to simplify push notifications",
+  "description": "SMS package utility that allows to send text sms to user via Twillio API as a alternative to our floor2hq/alerts/sms/sns",
   "main": "index.ts",
   "scripts": {
-    "test": "jest",
-    "start": "ts-node src/index.ts"
+    "test": "jest ",
+    "start":"tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/floor2hq/alerts.git"
   },
   "keywords": [
-    "alerts",
-    "sms",
-    "aws",
-    "sns"
+    "SMS",
+    "Twillio"
   ],
   "author": "Soubhik Kumar Gon",
   "license": "ISC",
@@ -25,10 +23,8 @@
   "homepage": "https://github.com/floor2hq/alerts#readme",
   "devDependencies": {
     "@types/express": "^4.17.21",
-    "@types/node": "^20.11.8",
+    "@types/node": "^20.11.9",
+    "express": "^4.18.2",
     "ts-node": "^10.9.2"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
   }
 }
